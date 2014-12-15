@@ -11,6 +11,7 @@ namespace Application;
 
 use Zend\Mvc\ModuleRouteListener;
 use Zend\Mvc\MvcEvent;
+use Application\Service\Municipio as MunicipiosService;
 
 class Module
 {
@@ -35,5 +36,18 @@ class Module
                 ),
             ),
         );
+    }
+    
+    public function getServiceConfig(){
+    	return array(
+            'factories' => array(
+                    			
+                'Application\Service\Municipio' => function ($service){
+    		return new MunicipiosService($service->get('Doctrine\ORM\EntityManager'));
+    		},
+    				
+    		)	
+    			
+    	);
     }
 }
