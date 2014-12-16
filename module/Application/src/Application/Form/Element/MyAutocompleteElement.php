@@ -16,8 +16,8 @@ class MyAutocompleteElement extends ObjectAutocomplete {
 					'target_class' => 'Application\Entity\Municipios',
 					'searchFields' => array('id', 'municipio'),
 					'empty_item_label' => 'Municipio não encontrado',
-					'select_warning_message' => 'Select a itemName in list',
-					'property' => 'municipio',
+					'select_warning_message' => 'Selecione um Município na lista',
+					'property' => 'id',
 					'orderBy' => array('municipio','ASC')
 			));
 			$this->initialized = true;

@@ -12,19 +12,22 @@ namespace Application\Controller;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 use Zend\Form\Form as FrmMunicipio;
+//use Zend\Form\Form as ImgForm;
+
+use Application\Form\BeneficiarioFilter;
 
 class IndexController extends AbstractActionController
 {
     public function indexAction()
     {
-        
+      
         $form = new FrmMunicipio;
     	        
         $form->add(array(
-        'name' => 'municipio',
+        'name' => 'myAutocompleteElement',
         'type' => 'Application\Form\Element\MyAutocompleteElement',
         'options' => array(
-            'label' => 'My label here',
+            'label' => 'Municipios',
             'sm' => $this->getServiceLocator(), // don't forget to send Service Manager
         ),
         'attributes' => array(
